@@ -1,0 +1,8 @@
+FROM node:18-alpine
+WORKDIR /app
+# The `dist/apps/next-app` usually contains package.json required for the build run.
+COPY dist/apps/next-app/package.json ./
+RUN npm install --omit=dev --legacy-peer-deps
+COPY dist/apps/next-app ./
+EXPOSE 3000
+CMD ["npm", "start"]
