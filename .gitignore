@@ -51,3 +51,7 @@ vite.config.*.timestamp*
 # Next.js
 .next
 out
+
+.angular
+
+__screenshots__/
