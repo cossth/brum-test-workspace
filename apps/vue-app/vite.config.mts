@@ -1,26 +1,29 @@
+/// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import vue from '@vitejs/plugin-vue';
+
 export default defineConfig(() => ({
   root: import.meta.dirname,
-  cacheDir: '../../node_modules/.vite/apps/react-app',
+  cacheDir: '../../node_modules/.vite/apps/vue-app',
   server: {
     port: 4200,
     host: 'localhost',
   },
   preview: {
-    port: 4200,
+    port: 4300,
     host: 'localhost',
   },
-  plugins: [react()],
+  plugins: [vue()],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [],
   // },
   build: {
-    emptyOutDir: true,
-    transformMixedEsModules: true,
     outDir: './dist',
+    emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: { transformMixedEsModules: true },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
   },
 }));
