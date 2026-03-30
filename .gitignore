@@ -55,3 +55,10 @@ out
 .angular
 
 __screenshots__/
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache

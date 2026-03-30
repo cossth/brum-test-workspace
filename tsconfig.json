@@ -11,6 +11,9 @@
     },
     {
       "path": "./apps/next-app"
+    },
+    {
+      "path": "./apps/nuxt-app"
     }
   ]
 }
