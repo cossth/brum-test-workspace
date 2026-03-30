@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/vue-app"
+    },
+    {
+      "path": "./apps/next-app"
     }
   ]
 }

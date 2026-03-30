@@ -3,18 +3,14 @@ set -e
 export CI=true
 export NX_DAEMON=false
 export NX_INTERACTIVE=false
+export NX_IGNORE_UNSUPPORTED_TS_SETUP="true"
 
-echo "Generating React App..."
-npx nx g @nx/react:app --directory=apps/react-app --e2eTestRunner=none --bundler=vite --style=css --interactive=false
+[ ! -d "apps/react-app" ] && (echo "Generating React App..."; npx nx g @nx/react:app --directory=apps/react-app --e2eTestRunner=none --bundler=vite --style=css --interactive=false) || echo "React App exists"
 
-echo "Generating Vue App..."
-npx nx g @nx/vue:app --directory=apps/vue-app --e2eTestRunner=none --style=css --interactive=false
+[ ! -d "apps/vue-app" ] && (echo "Generating Vue App..."; npx nx g @nx/vue:app --directory=apps/vue-app --e2eTestRunner=none --style=css --interactive=false) || echo "Vue App exists"
 
-echo "Generating Angular App..."
-npx nx g @nx/angular:app --directory=apps/angular-app --e2eTestRunner=none --style=css --interactive=false
+[ ! -d "apps/angular-app" ] && (echo "Generating Angular App..."; npx nx g @nx/angular:app --directory=apps/angular-app --e2eTestRunner=none --style=css --interactive=false) || echo "Angular App exists"
 
-echo "Generating Next App..."
-npx nx g @nx/next:app --directory=apps/next-app --e2eTestRunner=none --style=css --interactive=false
+[ ! -d "apps/next-app" ] && (echo "Generating Next App..."; npx nx g @nx/next:app --directory=apps/next-app --e2eTestRunner=none --style=css --interactive=false) || echo "Next App exists"
 
-echo "Generating Nuxt App..."
-npx nx g @nx/nuxt:app --directory=apps/nuxt-app --e2eTestRunner=none --style=css --interactive=false
+[ ! -d "apps/nuxt-app" ] && (echo "Generating Nuxt App..."; npx nx g @nx/nuxt:app --directory=apps/nuxt-app --e2eTestRunner=none --style=css --interactive=false) || echo "Nuxt App exists"
