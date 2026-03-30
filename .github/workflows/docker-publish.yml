@@ -24,8 +24,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Nx Plugins
+        run: npm i -D @nx/react @nx/vue @nx/angular @nx/next @nx/nuxt --no-audit --no-fund --legacy-peer-deps
+
+      - name: Generate App
+        run: ./generate.sh
 
       - name: Build App
         run: npx nx build ${{ matrix.app }}
